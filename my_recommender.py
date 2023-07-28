@@ -3,7 +3,7 @@
 ### import libraries
 import pandas as pd
 import streamlit as st
-import joblib
+#import joblib
 import numpy as np
 from PIL import Image
 from sklearn.model_selection import train_test_split
