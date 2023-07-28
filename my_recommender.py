@@ -6,7 +6,7 @@ import streamlit as st
 #import joblib
 import numpy as np
 from PIL import Image
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
 from surprise import Dataset
 from surprise.reader import Reader
 from surprise.prediction_algorithms.matrix_factorization import SVD as FunkSVD
