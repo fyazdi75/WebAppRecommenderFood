@@ -99,10 +99,6 @@ def content_recommender_second(recipename, df, similarities, RevCount_threshold=
 
 
 similarities_second = joblib.load('similarities_second_image_smalldate.pkl')
-#####instead of joblib######
-
-X_important_transformed = preprocessor_second.fit_transform(df)
-similarities_second = cosine_similarity(X_important_transformed, dense_output=False)
 similar_recipe = content_recommender_second(text, df, similarities_second, RevCount_threshold=4)
 similar_recipe.reset_index(inplace=True)
 
