@@ -3,7 +3,7 @@
 ### import libraries
 import pandas as pd
 import streamlit as st
-#import joblib
+import joblib
 import numpy as np
 from PIL import Image
 #from sklearn.model_selection import train_test_split
@@ -98,14 +98,9 @@ def content_recommender_second(recipename, df, similarities, RevCount_threshold=
     return top_recipe
 
 
-#similarities_second = joblib.load('similarities_second_image_smalldate.pkl')
+similarities_second = joblib.load('similarities_second_image_smalldate.pkl')
 #####instead of joblib######
-X_important = df[['Keywords','RecipeIngredientParts']]
-preprocessor_second = ColumnTransformer(
-    transformers=[
-        ('keywords_transform', My_phrase_vectorizer, 'Keywords'),
-        ('ingredients_transform', My_phrase_vectorizer, 'RecipeIngredientParts')
-    ])
+
 X_important_transformed = preprocessor_second.fit_transform(df)
 similarities_second = cosine_similarity(X_important_transformed, dense_output=False)
 similar_recipe = content_recommender_second(text, df, similarities_second, RevCount_threshold=4)
