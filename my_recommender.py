@@ -121,7 +121,7 @@ st.image(Image_list,width=130,caption=caption)
 st.title("FUNK SVD")
 st.write("Recommending to current users based on what they and other users have rated.")
 sorted_df = load_data("Transformed Data/ FunksvdReviewdf.parquet")
-recipe_df = load_data("Raw data/ recipes_twocolumn.parquet")
+recipe_df = load_data("recipes_twocolumn.parquet")
 #######################################################################################################################################
 ## FunkSVD Function
 def recom_Rating_FunkSVD(df,user_id):
